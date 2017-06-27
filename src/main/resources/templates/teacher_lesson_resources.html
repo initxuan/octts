@@ -39,7 +39,7 @@
     <link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
     <link href="assets/plugins/xcharts/css/xcharts.min.css" rel="stylesheet" />
     <link href="assets/plugins/morris/css/morris.css" rel="stylesheet" />
-
+    <link href="assets/css/teacher_lesson_resources.css  " rel="stylesheet" />
     <!-- Theme CSS -->
     <link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
 
@@ -49,7 +49,7 @@
 
     <!-- end: CSS file-->
 
-    <link href="assets/css/teacher_main_info.css" rel="stylesheet" />
+    <link href="assets/css/teacher_main.css" rel="stylesheet" />
     <!-- Head Libs -->
     <script src="assets/plugins/modernizr/js/modernizr.js"></script>
 
@@ -190,7 +190,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="table.html">
+                                <a href="teacher_lesson_resources.html">
                                     <i class="fa fa-table" aria-hidden="true"></i><span>课程资源</span>
                                 </a>
                             </li>
@@ -241,23 +241,112 @@
                 <div class="pull-left">
                     <ol class="breadcrumb visible-sm visible-md visible-lg">
                         <li><a href="teacher_main.html"><i class="icon fa fa-home"></i>首页</a></li>
-                        <li class="active" id="page-header-location"><i class="fa fa-laptop"></i>课程信息</li>
+                        <li class="active" id="page-header-location"><i class="fa fa-laptop"></i>课程资源</li>
                     </ol>
                 </div>
                 <!--课程信息设置界面 action暂无-->
 
-                <form  class ="lesson-info" action="" id="lesson-info-form">
-                    <p class="ref-lab"> 课程大纲</p>
+                <form  action="" class="lesson-info" >
+                    <select name="">
+                        <option value="0">课件</option>
+                        <option value="1">视频</option>
+                        <option value="2">文本</option>
+                    </select>
                     <input type="file" name="multipleFileUpload" multiple class="file-info"/>
-                    <textarea rows="4" cols="50" name="comment" class="lesson-info-textarea">请在此处输入文本</textarea>
-                    <p class="ref-lab" style="margin-top: 20px"> 课程要求</p>
-                    &nbsp&nbsp 团队人数： <input type="text" name="min-stu-num" class="stu-num">
-                    --- <input type="text" name="max-stu-num" class="stu-num"> 人 &nbsp&nbsp&nbsp
-                    ( 女生不少于  <input type="text" name="min-girl-num" class="stu-num">  人）
-                    <br/>
-                    <br/>
-                    <br/>
-                    <input type="submit" name="confir-info" class="confir-info">
+
+                        <div class="col-md-12 column">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        编号
+                                    </th>
+                                    <th>
+                                        资源名
+                                    </th>
+                                    <th>
+                                        上传时间
+                                    </th>
+                                    <th>
+                                        操作
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>
+                                        TB - Monthly
+                                    </td>
+                                    <td>
+                                        01/04/2012
+                                    </td>
+                                    <td>
+                                        Default
+                                    </td>
+                                </tr>
+                                <tr class="success">
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>
+                                        TB - Monthly
+                                    </td>
+                                    <td>
+                                        01/04/2012
+                                    </td>
+                                    <td>
+                                        Approved
+                                    </td>
+                                </tr>
+                                <tr class="error">
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>
+                                        TB - Monthly
+                                    </td>
+                                    <td>
+                                        02/04/2012
+                                    </td>
+                                    <td>
+                                        Declined
+                                    </td>
+                                </tr>
+                                <tr class="warning">
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        TB - Monthly
+                                    </td>
+                                    <td>
+                                        03/04/2012
+                                    </td>
+                                    <td>
+                                        Pending
+                                    </td>
+                                </tr>
+                                <tr class="info">
+                                    <td>
+                                        4
+                                    </td>
+                                    <td>
+                                        TB - Monthly
+                                    </td>
+                                    <td>
+                                        04/04/2012
+                                    </td>
+                                    <td>
+                                        Call in to confirm
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    <input type="button" value="批量删除" ／>
 
                 </form>
                 </div>
@@ -341,19 +430,5 @@
 </html>
 
 <script>
-    $(".confir-info").click(function () {
-        if(($(".file-info").value!=null || $(".lesson-info-textarea").value!=null)){
-            if($(".stu-num").value==null||!$.isNumeric($(".stu-num").value))
-            {
-                alert("请正确填入学生人数");
-            }
 
-            else
-            {
-                $("#lesson-info-form").submit();
-            }
-        }else{
-            alert("请正确填写课程大纲");
-        }
-    });
 </script>
