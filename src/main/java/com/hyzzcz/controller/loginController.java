@@ -1,4 +1,4 @@
-package controller;
+package com.hyzzcz.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by 吴娜 on 2017/6/27.
  */
 @Controller
-
 public class loginController {
+    @RequestMapping("/")
+    public String toIndex(){
+        return "login";
+    }
+
 
     @RequestMapping("/toLogin")
     public String doLogin(@RequestParam("name") String name,@RequestParam("password") String password, Model model){
@@ -19,4 +23,5 @@ public class loginController {
         else
             return "teacher_main";
     }
+
 }

@@ -1,4 +1,4 @@
-package entity;
+package com.hyzzcz.entity;
 
 /**
  * Created by 吴娜 on 2017/6/27.

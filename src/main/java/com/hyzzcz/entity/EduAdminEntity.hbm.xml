@@ -4,15 +4,15 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="entity.StuTeamMappingEntity" table="stu_team_mapping" schema="OCTTS">
+    <class name="com.hyzzcz.entity.EduAdminEntity" table="edu_admin" schema="OCTTS">
         <property name="id">
             <column name="id" sql-type="int(11) unsigned"/>
         </property>
-        <property name="stuId">
-            <column name="stu_id" sql-type="int(11)" not-null="true"/>
+        <property name="name">
+            <column name="name" sql-type="varchar(40)" length="40" not-null="true"/>
         </property>
-        <property name="teamId">
-            <column name="team_id" sql-type="int(11)" not-null="true"/>
+        <property name="password">
+            <column name="password" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

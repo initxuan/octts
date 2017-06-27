@@ -1,9 +1,9 @@
-package entity;
+package com.hyzzcz.entity;
 
 /**
  * Created by 吴娜 on 2017/6/27.
  */
-public class TeamGradeMappingEntity {
+public class TeamGradeEntity {
     private int id;
 
     public int getId() {
@@ -19,7 +19,7 @@ public class TeamGradeMappingEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TeamGradeMappingEntity that = (TeamGradeMappingEntity) o;
+        TeamGradeEntity that = (TeamGradeEntity) o;
 
         if (id != that.id) return false;
 
