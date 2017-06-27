@@ -48,6 +48,8 @@
     <link href="assets/css/add-ons.min.css" rel="stylesheet" />
 
     <!-- end: CSS file-->
+
+    <link href="assets/css/teacher_main_info.css" rel="stylesheet" />
     <!-- Head Libs -->
     <script src="assets/plugins/modernizr/js/modernizr.js"></script>
 
@@ -238,10 +240,27 @@
             <div class="page-header">
                 <div class="pull-left">
                     <ol class="breadcrumb visible-sm visible-md visible-lg">
-                        <li><a href="index.html"><i class="icon fa fa-home"></i>首页</a></li>
+                        <li><a href="teacher_main.html"><i class="icon fa fa-home"></i>首页</a></li>
+                        <li class="active" id="page-header-location"><i class="fa fa-laptop"></i>课程信息</li>
                     </ol>
                 </div>
+                <!--课程信息设置界面 action暂无-->
 
+                <form  class ="lesson-info" action="" id="lesson-info-form">
+                    <p class="ref-lab"> 课程大纲</p>
+                    <input type="file" name="multipleFileUpload" multiple class="file-info"/>
+                    <textarea rows="4" cols="50" name="comment" class="lesson-info-textarea">请在此处输入文本</textarea>
+                    <p class="ref-lab" style="margin-top: 20px"> 课程要求</p>
+                    &nbsp&nbsp 团队人数： <input type="text" name="min-stu-num" class="stu-num">
+                    --- <input type="text" name="max-stu-num" class="stu-num"> 人 &nbsp&nbsp&nbsp
+                    ( 女生不少于  <input type="text" name="min-girl-num" class="stu-num">  人）
+                    <br/>
+                    <br/>
+                    <br/>
+                    <input type="submit" name="confir-info" class="confir-info">
+
+                </form>
+                </div>
             </div>
             <!-- End Page Header -->
         </div>
@@ -320,3 +339,21 @@
 </body>
 
 </html>
+
+<script>
+    $(".confir-info").click(function () {
+        if(($(".file-info").value!=null || $(".lesson-info-textarea").value!=null)){
+            if($(".stu-num").value==null||!$.isNumeric($(".stu-num").value))
+            {
+                alert("请正确填入学生人数");
+            }
+
+            else
+            {
+                $("#lesson-info-form").submit();
+            }
+        }else{
+            alert("请正确填写课程大纲");
+        }
+    });
+</script>

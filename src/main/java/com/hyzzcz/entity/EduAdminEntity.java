@@ -1,12 +1,11 @@
-package entity;
+package com.hyzzcz.entity;
 
 /**
  * Created by 吴娜 on 2017/6/27.
  */
-public class TeacherEntity {
+public class EduAdminEntity {
     private int id;
     private String name;
-    private Integer teaNum;
     private String password;
 
     public int getId() {
@@ -25,14 +24,6 @@ public class TeacherEntity {
         this.name = name;
     }
 
-    public Integer getTeaNum() {
-        return teaNum;
-    }
-
-    public void setTeaNum(Integer teaNum) {
-        this.teaNum = teaNum;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -46,11 +37,10 @@ public class TeacherEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TeacherEntity that = (TeacherEntity) o;
+        EduAdminEntity that = (EduAdminEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (teaNum != null ? !teaNum.equals(that.teaNum) : that.teaNum != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
 
         return true;
@@ -60,7 +50,6 @@ public class TeacherEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (teaNum != null ? teaNum.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }

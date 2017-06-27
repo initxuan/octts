@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="entity.StudentEntity" table="student" schema="OCTTS">
+    <class name="com.hyzzcz.entity.StudentEntity" table="student" schema="OCTTS">
         <property name="id">
             <column name="id" sql-type="int(11) unsigned"/>
         </property>

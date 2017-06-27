@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="entity.TaskEntity" table="task" schema="OCTTS">
+    <class name="com.hyzzcz.entity.TeamGradeEntity" table="team_grade" schema="OCTTS">
         <property name="id">
             <column name="id" sql-type="int(11) unsigned"/>
         </property>
